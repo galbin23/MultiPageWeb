@@ -10,4 +10,4 @@ This is a small, professional website built with semantic HTML, accessibility fe
 - Contact (contact.html)
 
 ## Screenshot
-(images/preCSS.jpg)
+![Home Page Screenshot](preCSS.jpg)
