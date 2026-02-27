@@ -10,4 +10,4 @@ This is a small, professional website built with semantic HTML, accessibility fe
 - Contact (contact.html): Form for inquiries.
 
 ## Screenshot
-<image-card alt="Home Page Screenshot" src="images/home-screenshot.png" ></image-card>
+<image-card alt="Home Page Screenshot" src="finalnoCSS" ></image-card>
