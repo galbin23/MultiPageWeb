@@ -1,1 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Search </title>
+    <link rel="stylesheet" href="css/api-search.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🍳 API Search Recipes</h1>
+        <p class="description">Search for various recipes using TheMealDB API.</p>
 
+        <div class="search-area">
+            <input type="text" id="searchInput" placeholder="Enter the name of a meal.">
+            <button id="searchBtn">Search Recipe</button>
+        </div>
+
+        <div id="status" class="status"></div>
+        <div id="results" class="results"></div>
+    </div>
+
+    <script src="js/api-search.js"></script>
+</body>
+</html>
