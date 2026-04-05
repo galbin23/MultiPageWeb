@@ -1,25 +1,45 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recipe Search </title>
-    <link rel="stylesheet" href="css/api-search.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Search - My Multi-Page Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/api-search.css">
 </head>
 <body>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="api-search.html">Recipe Search</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
     <div class="container">
-        <h1>🍳 API Search Recipes</h1>
-        <p class="description">Search for various recipes using TheMealDB API.</p>
+      <h1> Recipe Search</h1>
+      <p class="description">Search for various recipes using TheMealDB API.</p>
 
-        <div class="search-area">
-            <input type="text" id="searchInput" placeholder="Enter the name of a meal.">
-            <button id="searchBtn">Search Recipe</button>
-        </div>
+      <div class="search-area">
+        <input type="text" id="searchInput" placeholder="Enter the name of a meal.">
+        <button id="searchBtn">Search Recipe</button>
+      </div>
 
-        <div id="status" class="status"></div>
-        <div id="results" class="results"></div>
+      <div id="status" class="status"></div>
+      <div id="results" class="results"></div>
     </div>
+  </main>
 
-    <script src="js/api-search.js"></script>
+  <footer>
+    <p>&copy; 2026 Grant. All rights reserved.</p>
+  </footer>
+
+  <script src="js/api-search.js"></script>
 </body>
 </html>
