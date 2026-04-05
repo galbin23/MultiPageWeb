@@ -50,7 +50,6 @@ async function runSearch() {
     }
 }
 
-
 searchBtn.addEventListener("click", runSearch);
 
 searchInput.addEventListener("keypress", (e) => {
