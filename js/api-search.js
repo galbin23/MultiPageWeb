@@ -39,7 +39,7 @@ async function runSearch() {
                     <h3>${meal.strMeal}</h3>
                     <p><strong>Category:</strong> ${meal.strCategory}</p>
                     <p><strong>Area:</strong> ${meal.strArea}</p>
-                    ${meal.strYoutube ? `<p><strong>Video:</strong> <a href="${meal.strYoutube}" target="_blank">Watch on YouTube</a></p>` : ''}
+
                 </div>
             </div>
         `).join("");
