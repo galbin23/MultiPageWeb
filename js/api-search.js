@@ -26,7 +26,7 @@ async function runSearch() {
         const data = await response.json();
 
         if (!data.meals) {
-            status.textContent = `No recipes found for "${term}". Try something else!;
+            status.textContent = `No recipes found for "${term}". Try something else';
             return;
         }
 
