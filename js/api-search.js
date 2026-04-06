@@ -7,12 +7,12 @@ async function runSearch() {
     const term = searchInput.value.trim();
 
     if (!term) {
-        status.textContent = "Please enter a meal name to search!";
+        status.textContent = "Please enter a meal name.";
         results.innerHTML = "";
         return;
     }
 
-    status.textContent = "Loading delicious recipes...";
+    status.textContent = "Loading recipes";
     results.innerHTML = "";
 
     try {
@@ -26,7 +26,7 @@ async function runSearch() {
         const data = await response.json();
 
         if (!data.meals) {
-            status.textContent = `No recipes found for "${term}". Try something else!`;
+            status.textContent = `No recipes found for "${term}". Try something else!;
             return;
         }
 
@@ -46,7 +46,7 @@ async function runSearch() {
 
     } catch (error) {
         console.error(error);
-        status.textContent = "Something went wrong. Please try again later.";
+        status.textContent = "Something went wrong. oops.";
     }
 }
 
