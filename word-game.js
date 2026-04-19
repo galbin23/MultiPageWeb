@@ -1,25 +1,26 @@
-
 const wordList = [
-  "crane", "slate", "audio", "brisk", "clump",
-  "flair", "ghost", "honey", "irony", "joust",
-  "knack", "light", "moist", "novel", "olive",
-  "plank", "quart", "raven", "swamp", "torch",
-  "ulcer", "vivid", "waltz", "xenon", "yacht",
-  "zippy", "blaze", "crisp", "drove", "ember",
-  "flint", "groan", "haste", "inlet", "jumpy"
+  "apple", "house", "smile", "plant", "chair",
+  "beach", "cloud", "dance", "eagle", "flame",
+  "grape", "heart", "ivory", "joker", "lemon",
+  "mango", "night", "ocean", "peace", "queen",
+  "river", "stone", "tiger", "umbra", "valve",
+  "waltz", "xerox", "yacht", "zonal", "brisk",
+  "crimp", "dwelt", "expel", "froze", "glyph",
+  "helix", "inept", "joust", "knack", "lymph",
+  "nymph", "oxbow", "pygmy", "qualm", "rhumb",
+  "stomp", "tryst", "vouch", "wrung", "crypt"
+
 ];
 
+
 const game = {
-  state: "playing",      // "playing", "win", or "lose"
+  state: "playing", 
   targetWord: "",
-  guesses: [],           // array of submitted guess strings
-  feedback: [],          // array of feedback arrays per guess
+  guesses: [],        
+  feedback: [],       
   currentRow: 0,
-  currentInput: []       // letters typed so far in current row
+  currentInput: []    
 };
-
-
-
 
 function resetGame() {
   game.state = "playing";
@@ -30,12 +31,10 @@ function resetGame() {
   game.currentInput = [];
 }
 
-
 function checkGuess(guess) {
   const target = game.targetWord.split("");
   const result = ["absent", "absent", "absent", "absent", "absent"];
   const targetCopy = [...target];
-
 
   for (let i = 0; i < 5; i++) {
     if (guess[i] === target[i]) {
@@ -57,19 +56,16 @@ function checkGuess(guess) {
   return result;
 }
 
-
 function processKey(key) {
-
+ 
   if (game.state !== "playing") return;
 
   if (key === "Backspace") {
-
     if (game.currentInput.length > 0) {
       game.currentInput.pop();
     }
 
   } else if (key === "Enter") {
-
     if (game.currentInput.length < 5) return;
 
     const guess = game.currentInput.join("");
@@ -78,26 +74,24 @@ function processKey(key) {
     game.guesses.push(guess);
     game.feedback.push(result);
 
-
     if (guess === game.targetWord) {
       game.state = "win";
     } else if (game.currentRow === 5) {
-
       game.state = "lose";
     }
 
-    game.currentRow++;
+    if (game.state === "playing") {
+      game.currentRow++;
+    }
+
     game.currentInput = [];
 
   } else if (/^[a-zA-Z]$/.test(key)) {
-
     if (game.currentInput.length < 5) {
       game.currentInput.push(key.toLowerCase());
     }
   }
 }
-
-
 
 
 function buildBoard() {
@@ -147,10 +141,10 @@ function renderStatus() {
   statusEl.className = "status-message";
 
   if (game.state === "win") {
-    statusEl.textContent = "You got it! The word was " + game.targetWord.toUpperCase() + ". 🎉";
+    statusEl.textContent = "You win! The word was " + game.targetWord.toUpperCase() + ". 🎉";
     statusEl.classList.add("win");
   } else if (game.state === "lose") {
-    statusEl.textContent = "Game over! The word was " + game.targetWord.toUpperCase() + ".";
+    statusEl.textContent = "You lose! The word was " + game.targetWord.toUpperCase() + ".";
     statusEl.classList.add("lose");
   } else {
     statusEl.textContent = "";
@@ -168,13 +162,11 @@ document.addEventListener("keydown", (event) => {
   renderGame();
 });
 
-
 document.getElementById("restartBtn").addEventListener("click", () => {
   resetGame();
   buildBoard();
   renderGame();
 });
-
 
 resetGame();
 buildBoard();
