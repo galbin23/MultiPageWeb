@@ -1,3 +1,7 @@
+h1, h2 {
+  text-align: center;
+}
+
 .card-counter {
   text-align: center;
   color: var(--muted);
