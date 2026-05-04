@@ -1,10 +1,8 @@
-// State
+
 let cards = [];
 let currentIndex = 0;
 let results = [];
 let flipped = false;
-
-// --- Storage ---
 
 function saveCards() {
   localStorage.setItem('flashcards', JSON.stringify(cards));
@@ -14,17 +12,8 @@ function loadCards() {
   const stored = localStorage.getItem('flashcards');
   if (stored) {
     cards = JSON.parse(stored);
-  } else {
-    cards = [
-      { front: 'What does HTML stand for?', back: 'HyperText Markup Language' },
-      { front: 'What does CSS stand for?', back: 'Cascading Style Sheets' },
-      { front: 'What is the DOM?', back: 'Document Object Model' }
-    ];
-    saveCards();
   }
 }
-
-// --- Rendering ---
 
 function renderCard() {
   const counter = document.getElementById('card-counter');
@@ -86,8 +75,6 @@ function renderCardList() {
     list.appendChild(li);
   });
 }
-
-// --- Actions ---
 
 function flipCard() {
   if (cards.length === 0) return;
@@ -154,8 +141,6 @@ function resetStudy() {
   renderCard();
 }
 
-// --- Event Listeners ---
-
 function setupListeners() {
   const wrap = document.getElementById('flashcard-wrap');
   wrap.addEventListener('click', flipCard);
@@ -185,7 +170,7 @@ function setupListeners() {
 
     const duplicate = cards.some(c => c.front.toLowerCase() === front.toLowerCase());
     if (duplicate) {
-      error.textContent = 'A card with that front already exists.';
+      error.textContent = 'That card already exists';
       return;
     }
 
@@ -200,8 +185,6 @@ function setupListeners() {
     }
   });
 }
-
-// --- Init ---
 
 function init() {
   loadCards();
