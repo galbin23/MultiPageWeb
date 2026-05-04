@@ -92,6 +92,7 @@ nav a:hover {
 
 main {
   padding: var(--space-3) 0;
+  text-align: center;
 }
 
 section,
