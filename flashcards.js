@@ -12,6 +12,9 @@ function loadCards() {
   const stored = localStorage.getItem('flashcards');
   if (stored) {
     cards = JSON.parse(stored);
+  } else {
+    cards = [{ front: 'Example Question', back: 'Example Term' }];
+    saveCards();
   }
 }
 
