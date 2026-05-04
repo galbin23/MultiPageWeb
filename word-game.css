@@ -1,0 +1,92 @@
+.game-description {
+  color: var(--muted);
+  margin-bottom: var(--space-3);
+  font-size: 1rem;
+}
+
+
+.board {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 0.5rem;
+  width: fit-content;
+  margin: 0 auto var(--space-3) auto;
+}
+
+.board-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+}
+
+.tile {
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 2px solid #d3d6da;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 0.25rem;
+  transition: border-color 0.1s;
+}
+
+
+.tile.active {
+  border-color: #888;
+}
+
+
+.tile.correct {
+  background: #538d4e;
+  color: white;
+  border-color: #538d4e;
+}
+
+.tile.present {
+  background: #b59f3b;
+  color: white;
+  border-color: #b59f3b;
+}
+
+.tile.absent {
+  background: #3a3a3c;
+  color: white;
+  border-color: #3a3a3c;
+}
+
+
+.status-message {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  min-height: 1.75rem;
+  margin-bottom: var(--space-2);
+  color: var(--text);
+}
+
+.status-message.win {
+  color: #538d4e;
+}
+
+.status-message.lose {
+  color: #cc3300;
+}
+
+
+.restart-btn {
+  display: block;
+  margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .tile {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.25rem;
+  }
+}

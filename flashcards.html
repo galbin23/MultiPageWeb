@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flashcards - My Multi-Page Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="flashcards.css">
+</head>
+
+<body>
+  <header>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="api-search.html">Recipe Search</a></li>
+        <li><a href="word-game.html">Word Game</a></li>
+        <li><a href="flashcards.html">Flashcards</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Flashcard Study Application</h1>
+    <p class="muted">You can flip a card by clicking it. Select Correct or Incorrect to keep track of your score. GOOD
+      LUCK!</p>
+
+    <section>
+      <h2>Study Your Created Flashcards Here</h2>
+
+      <p id="card-counter" class="card-counter"></p>
+
+      <div id="flashcard-wrap" class="flashcard-wrap" role="button" tabindex="0" aria-label="Flashcard, click to flip">
+        <div id="flashcard" class="flashcard">
+          <div class="flashcard-front">
+            <p id="card-front-text"></p>
+          </div>
+          <div class="flashcard-back">
+            <p id="card-back-text"></p>
+          </div>
+        </div>
+      </div>
+
+      <div id="card-controls" class="card-controls">
+        <button class="btn btn-secondary" id="prevBtn">&#8592; Previous</button>
+        <button class="btn btn-secondary" id="flipBtn">Flip</button>
+        <button class="btn btn-secondary" id="nextBtn">Next &#8594;</button>
+      </div>
+
+      <div id="mark-controls" class="mark-controls">
+        <button class="btn btn-got" id="gotBtn">Correct</button>
+        <button class="btn btn-missed" id="missedBtn">Incorrect</button>
+      </div>
+
+      <div id="score-display" class="score-display"></div>
+    </section>
+
+    <section>
+      <h2>Manage Your Created Flash Cards Here!</h2>
+
+      <form id="add-card-form">
+        <label for="front-input">Question or Term (front) </label>
+        <input type="text" id="front-input" placeholder="Enter a question or term">
+        <label for="back-input">Answer or Definition (back) </label>
+        <input type="text" id="back-input" placeholder="Enter the answer or definition">
+        <button type="submit" class="btn">Add Card</button>
+      </form>
+
+      <p id="form-error" class="form-error"></p>
+
+      <ul id="card-list" class="card-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Grant. All rights reserved.</p>
+  </footer>
+
+  <script src="flashcards.js"></script>
+</body>
+
+</html>
